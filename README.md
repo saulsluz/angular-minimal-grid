@@ -37,7 +37,7 @@ $scope.myRows = [
 ]
 ```
 
-It's suports nested objects: see [angular's parse](https://docs.angularjs.org/api/ng/service/$parse).
+It's suportted nested objects: see [angular's parse](https://docs.angularjs.org/api/ng/service/$parse).
 
 ```js
 $scope.myColumns = [
@@ -48,6 +48,24 @@ $scope.myColumns = [
 $scope.myRows = [
   { person: { user: { name: 'John ' } }, lastName: 'Doe', age: 1 },
   { person: { user: { name: 'Marie ' } }, lastName: 'Doe', age: 1 }
+]
+```
+It's suportted custom rendering of cell value: uses `onRender` callback
+```js
+$scope.myColumns = [
+  { key: 'name', title: 'Name' },
+  { key: 'lastName', title: 'Last Name' },
+  { key: 'age', title: 'Age', onRender: function(val){
+      if (val < 18) {
+        return 'child'
+      } else {
+        return 'adult'
+      }
+  }}
+]
+$scope.myRows = [
+  { name: 'John ', lastName: 'Doe', age: 1 },
+  { name: 'Marie ', lastName: 'Doe', age: 1 }
 ]
 ```
 
