@@ -29,6 +29,5 @@
   "dependencies": {
     "bootstrap": "^3.x.x",
     "angular": "^1.5.x"
-  },
-  "private": true
+  }
 }
