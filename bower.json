@@ -1,9 +1,9 @@
 {
-  "name": "angular-bootstrap-data-grid",
+  "name": "angular-minimal-grid",
   "authors": [
     "Saul Luz <saulsluz@gmail.com>"
   ],
-  "description": "Implementation of data grid using bootstrap ui for angular 1.x.x applications",
+  "description": "Implementation of data grid using twitter bootstrap for angular applications",
   "main": [
     "js/grid.js",
     "js/grid.css"
