@@ -1,0 +1,34 @@
+{
+  "name": "angular-bootstrap-data-grid",
+  "authors": [
+    "Saul Luz <saulsluz@gmail.com>"
+  ],
+  "description": "Implementation of data grid using bootstrap ui for angular 1.x.x applications",
+  "main": [
+    "js/grid.js",
+    "js/grid.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/saulsluz/angular-bootstrap-data-grid.git"
+  },
+  "keywords": [
+    "data",
+    "grid",
+    "bootstrap"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.x.x",
+    "angular": "^1.5.x"
+  },
+  "private": true
+}
