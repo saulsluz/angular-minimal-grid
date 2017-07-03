@@ -77,7 +77,7 @@
           }
 
           scope.statsParse = function () {
-            var message = 'Mostrando %1 à %2 de %3 registros'
+            var message = 'Showing %1 to %2 of %3 results'
             var first = ((scope.pages.current - 1) * scope.pages.max) > 0 ? ((scope.pages.current - 1) * scope.pages.max) + 1 : (scope._data.length > 0) ? 1 : 0;
             if (!scope.fake) {
               var last = (((scope.pages.current - 1) * scope.pages.max) + scope.pages.max) < scope._data.length ? (((scope.pages.current - 1) * scope.pages.max) + scope.pages.max) : scope._data.length
