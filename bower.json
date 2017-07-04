@@ -5,8 +5,8 @@
   ],
   "description": "Minimal implementation of data grid using twitter bootstrap for angular applications exploring the callback power.",
   "main": [
-    "js/grid.js",
-    "js/grid.css"
+    "js/minimal-grid.js",
+    "css/minimal-grid.css"
   ],
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
     "bootstrap": "^3.x.x",
     "angular": "^1.5.x"
   }
