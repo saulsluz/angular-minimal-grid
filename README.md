@@ -43,6 +43,10 @@ $scope.myRows = [
 ]
 ```
 
+That's all.
+
+#### Nested objects
+
 It's suportted nested objects: uses [angular's parse](https://docs.angularjs.org/api/ng/service/$parse).
 
 ```js
@@ -56,7 +60,11 @@ $scope.myRows = [
   { person: { user: { name: 'Marie ' } }, lastName: 'Doe', age: 1 }
 ]
 ```
+
+#### Custom rendering
+
 It's suportted custom rendering of cell value: uses `onRender`
+
 ```js
 $scope.myColumns = [
   { key: 'name', title: 'Name' },
@@ -74,8 +82,6 @@ $scope.myRows = [
   { name: 'Marie ', lastName: 'Doe', age: 1 }
 ]
 ```
-
-That's all.
 
 #### Getting the control
 
@@ -98,6 +104,7 @@ The isolated scope binding:
 ```
 
 ##### on-click-row
+
 If you want to do somenthing when the user clicks on a row just add a binding on a click:
 
 ```html
@@ -109,6 +116,7 @@ If you want to do somenthing when the user clicks on a row just add a binding on
 It's important to pass "row" as parameter: Uses [angular's parameter by reference](https://docs.angularjs.org/guide/directive).
 
 ##### on-change-paginate
+
 If you want to do somenthing when the user clicks on a page number (previous or next) just add a binding on a paginate:
 
 ```html
@@ -120,6 +128,7 @@ If you want to do somenthing when the user clicks on a page number (previous or 
 It's important to pass "pages" as parameter: Uses [angular's parameter by reference](https://docs.angularjs.org/guide/directive).
 
 ##### on-change-order-by
+
 If you want to do somenthing when the user clicks on a header (to change the order by) just add a binding on a order by:
 
 ```html
@@ -151,14 +160,14 @@ Using this mode you will need to set the row's length by setting `totalRows`
 
 Combine with callbacks and feel the power.
 
-
 ##### pagination-max
+
 Set the max rows peer page. Default is `10`.
 
-
 ##### pagination-range
+
 Set the range of number's page to show. Default is `5`.
 
-
 ### License
+
 MIT License
