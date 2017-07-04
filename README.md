@@ -11,8 +11,8 @@ Uses custom style of [dataTable](https://github.com/DataTables/DataTables).
 Add to project:
 
 ```html
-<link href="./bower_components/angular-minimal-grid/css/minimal-grid.css" rel="stylesheet">
-<script src="./bower_components/angular-minimal-grid/js/minimal-grid.js"></script>
+<link href="./bower_components/angular-minimal-grid/dist/minimal-grid.min.css" rel="stylesheet">
+<script src="./bower_components/angular-minimal-grid/dist/minimal-grid.min.js"></script>
 ```
 
 ```js
