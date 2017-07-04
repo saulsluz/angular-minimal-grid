@@ -1,7 +1,27 @@
 (function () {
 
   angular.module('ngMinimalGrid', [])
-    .directive('minimalGrid', ['$parse', '$filter', function ($parse, $filter) {
+    .provider('minimalGridConfig',function(){
+      this.statsMessage = 'Showing %1 to %2 of %3 results'
+      this.setStatsMessage = function(message){
+        this.statsMessage = message
+      }
+
+      this.firstButtonLabel = 'First'
+      this.setFirstLabel = function(label){
+        this.firstButtonLabel = label
+      }
+      
+      this.lastButtonLabel = 'Last'
+      this.setLastLabel = function(label){
+        this.lastButtonLabel = label
+      }
+      
+      this.$get = function(){
+        return this
+      }
+    })
+    .directive('minimalGrid', ['minimalGridConfig', '$parse', '$filter', function (minimalGridConfig, $parse, $filter) {
       return {
         restrict: 'E',
         scope: {
@@ -31,7 +51,7 @@
         '</table>' +
         '<div class="pull-right">' +
         '  <ul class="pagination">' +
-        '    <li><a href="#" ng-click="changePaginate(pages.first)">First</a></li>' +
+        '    <li><a href="#" ng-click="changePaginate(pages.first)">{{ firstButtonLabel }}</a></li>' +
         '    <li>' +
         '      <a href="#" ng-click="changePaginate(pages.previous)">' +
         '        << </a>' +
@@ -39,11 +59,14 @@
         '    <li class="{{ ( n == pages.current ? \'active\' : \'\') }}"' +
         '      ng-click="changePaginate(n)" ng-repeat="n in pages.total | limitTo : pages.range : pages.pagination"><a href="#">{{ n }}</a></li>' +
         '    <li><a href="#" ng-click="changePaginate(pages.next)"> >> </a></li>' +
-        '    <li><a href="#" ng-click="changePaginate(pages.last)">Last</a></li>' +
+        '    <li><a href="#" ng-click="changePaginate(pages.last)">{{ lastButtonLabel }}</a></li>' +
         '  </ul>' +
         '</div>' +
         '<div class="clearfix"></div>',
         link: function (scope) {
+
+          scope.firstButtonLabel = minimalGridConfig.firstButtonLabel
+          scope.lastButtonLabel = minimalGridConfig.lastButtonLabel
 
           // model
           scope.$watchCollection('rows', function (newRows) {
@@ -78,7 +101,7 @@
           }
 
           scope.statsParse = function () {
-            var message = 'Showing %1 to %2 of %3 results'
+            var message = minimalGridConfig.statsMessage
             var first = ((scope.pages.current - 1) * scope.pages.max) > 0 ? ((scope.pages.current - 1) * scope.pages.max) + 1 : (scope._data.length > 0) ? 1 : 0;
             if (!scope.fake) {
               var last = (((scope.pages.current - 1) * scope.pages.max) + scope.pages.max) < scope._data.length ? (((scope.pages.current - 1) * scope.pages.max) + scope.pages.max) : scope._data.length
