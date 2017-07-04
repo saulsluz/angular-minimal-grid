@@ -15,6 +15,12 @@ Add to project:
 <script src="./bower_components/angular-minimal-grid/js/minimal-grid.js"></script>
 ```
 
+```js
+var app = angular.module('app', [
+  'ngMinimalGrid'
+])
+```
+
 ### Usage
 
 Example of minimum usage:
@@ -37,7 +43,7 @@ $scope.myRows = [
 ]
 ```
 
-It's suportted nested objects: see [angular's parse](https://docs.angularjs.org/api/ng/service/$parse).
+It's suportted nested objects: uses [angular's parse](https://docs.angularjs.org/api/ng/service/$parse).
 
 ```js
 $scope.myColumns = [
@@ -50,7 +56,7 @@ $scope.myRows = [
   { person: { user: { name: 'Marie ' } }, lastName: 'Doe', age: 1 }
 ]
 ```
-It's suportted custom rendering of cell value: uses `onRender` callback
+It's suportted custom rendering of cell value: uses `onRender`
 ```js
 $scope.myColumns = [
   { key: 'name', title: 'Name' },
@@ -100,7 +106,7 @@ If you want to do somenthing when the user clicks on a row just add a binding on
   ></minimal-grid>
 ```
 
-It's important to pass "row" as parameter. See [parameter by reference](https://docs.angularjs.org/guide/directive).
+It's important to pass "row" as parameter: Uses [angular's parameter by reference](https://docs.angularjs.org/guide/directive).
 
 ##### on-change-paginate
 If you want to do somenthing when the user clicks on a page number (previous or next) just add a binding on a paginate:
@@ -111,7 +117,7 @@ If you want to do somenthing when the user clicks on a page number (previous or 
   ></minimal-grid>
 ```
 
-It's important to pass "pages" as parameter. See [parameter by reference](https://docs.angularjs.org/guide/directive).
+It's important to pass "pages" as parameter: Uses [angular's parameter by reference](https://docs.angularjs.org/guide/directive).
 
 ##### on-change-order-by
 If you want to do somenthing when the user clicks on a header (to change the order by) just add a binding on a order by:
@@ -122,7 +128,7 @@ If you want to do somenthing when the user clicks on a header (to change the ord
   ></minimal-grid>
 ```
 
-It's important to pass "orderby" as parameter. See [parameter by reference](https://docs.angularjs.org/guide/directive).
+It's important to pass "orderby" as parameter: Uses [angular's parameter by reference](https://docs.angularjs.org/guide/directive).
 
 ##### fake mode
 
@@ -155,4 +161,4 @@ Set the range of number's page to show. Default is `5`.
 
 
 ### License
-Apache License 2.0
+MIT License
