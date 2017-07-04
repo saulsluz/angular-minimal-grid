@@ -8,12 +8,13 @@ Uses custom style of [dataTable](https://github.com/DataTables/DataTables).
 
 `$ bower install angular-minimal-grid`
 
-Add to project:
+Embed it in your HTML:
 
 ```html
 <link href="./bower_components/angular-minimal-grid/dist/minimal-grid.min.css" rel="stylesheet">
 <script src="./bower_components/angular-minimal-grid/dist/minimal-grid.min.js"></script>
 ```
+Inject `angular-minimal-grid` module as a dependency into your app:
 
 ```js
 var app = angular.module('app', [
