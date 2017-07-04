@@ -31,7 +31,7 @@
         '</table>' +
         '<div class="pull-right">' +
         '  <ul class="pagination">' +
-        '    <li><a href="#" ng-click="changePaginate(pages.first)">Primeiro</a></li>' +
+        '    <li><a href="#" ng-click="changePaginate(pages.first)">First</a></li>' +
         '    <li>' +
         '      <a href="#" ng-click="changePaginate(pages.previous)">' +
         '        << </a>' +
@@ -39,9 +39,10 @@
         '    <li class="{{ ( n == pages.current ? \'active\' : \'\') }}"' +
         '      ng-click="changePaginate(n)" ng-repeat="n in pages.total | limitTo : pages.range : pages.pagination"><a href="#">{{ n }}</a></li>' +
         '    <li><a href="#" ng-click="changePaginate(pages.next)"> >> </a></li>' +
-        '    <li><a href="#" ng-click="changePaginate(pages.last)">Último</a></li>' +
+        '    <li><a href="#" ng-click="changePaginate(pages.last)">Last</a></li>' +
         '  </ul>' +
-        '</div>        ',
+        '</div>' +
+        '<div class="clearfix"></div>',
         link: function (scope) {
 
           // model
