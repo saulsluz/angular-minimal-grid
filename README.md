@@ -164,9 +164,23 @@ Combine with callbacks and feel the power.
 
 Set the max rows peer page. Default is `10`.
 
+```html
+<minimal-grid columns="myColumns" rows="myRows"
+  fake="true"
+  pagination-max="15"
+  ></minimal-grid>
+```
+
 ##### pagination-range
 
 Set the range of number's page to show. Default is `5`.
+
+```html
+<minimal-grid columns="myColumns" rows="myRows"
+  fake="true"
+  pagination-range="3"
+  ></minimal-grid>
+```
 
 ### License
 
