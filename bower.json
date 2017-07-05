@@ -26,7 +26,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
+  "devDependencies": {
     "bootstrap": "^3.x.x",
     "angular": "^1.x.x"
   }

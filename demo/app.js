@@ -67,8 +67,12 @@
       { key: 'lastName', title: 'Last Name' },
       { key: 'age', title: 'Age' }
     ]
-    $scope.fCallRows = get100Rows()
-    $scope.fCallTotal = $scope.fCallRows.length
+    $scope.fCallRows = []
+    asyncGet100Rows(function(rows){
+      $scope.fCallRows = rows
+      $scope.fCallTotal = rows.length
+    })
+
     $scope.fCallChange = function(orderBy){
       console.log('fCallChange', orderBy)
     }
@@ -79,6 +83,31 @@
       console.log('fCallClick', row)
     }
 
+    // fake with callback
+    $scope.serverColumns = [
+      { key: 'name', title: 'Name' },
+      { key: 'lastName', title: 'Last Name' },
+      { key: 'age', title: 'Age' }
+    ]
+    $scope.serverRows = []
+    asyncGet100Rows(function(rows){
+      $scope.serverRows = rows
+      $scope.serverTotal = rows.length
+    })
+
+    $scope.serverChange = function(orderBy){
+      console.log('serverChange', orderBy)
+    }
+    $scope.serverPaginate = function(pages){
+      console.log('serverPaginate', pages)
+      asyncGet10RandomRows(function(rows){
+        $scope.serverRows = rows
+        $scope.serverTotal = 1000
+      })
+    }
+    $scope.serverClick = function(row){
+      console.log('serverClick', row)
+    }
 
     function get100Rows(){
       var rows = []
@@ -94,7 +123,24 @@
       $timeout(function(){
         var rows = get100Rows()
         callback(rows)
-      },3000)
+      },1000)
+    }
+
+    function get10RandomRows(){
+      var rows = []
+      for (var x=0; x<10; x++){
+        var y = Math.ceil(Math.random()*10);
+        rows.push(
+          { name: 'John '+y, lastName: 'Doe', age: y }
+        )
+      }
+      return rows
+    }
+    function asyncGet10RandomRows(callback){
+      $timeout(function(){
+        var rows = get10RandomRows()
+        callback(rows)
+      },1000)
     }
 
   }])
