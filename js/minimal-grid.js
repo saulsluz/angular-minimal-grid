@@ -196,10 +196,13 @@
           }
 
           function getPagination() {
-            var pagination = scope.pages.current - 1
+            var pagination = 0
+            
+            if (pagination < scope.pages.range) pagination = scope.pages.current - Math.ceil(scope.pages.range/2)
+            
             var diffTotalRange = (scope.pages.total.length - scope.pages.range)
-
             if (pagination > diffTotalRange) pagination = diffTotalRange
+            
             if (pagination < 0) pagination = 0
 
             return pagination
