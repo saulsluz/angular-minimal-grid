@@ -46,6 +46,26 @@ $scope.myRows = [
 
 That's all.
 
+### Customization
+
+#### Custom labels
+
+It's suportted custom labels by Provider methods:
+
+|           method          |   property       |          default value             |
+| ------------------------- | ---------------- | ---------------------------------- |
+| setStatsMessage(`String`) | statsMessage     | `'Showing %1 to %2 of %3 results'` |
+| setFirstLabel(`String`)   | firstButtonLabel | `First`                            |
+| setLastLabel(`String`)    | lastButtonLabel  | `Last`                             |
+
+```js
+app.config(function(minimalGridConfigProvider){
+  minimalGridConfigProvider.setStatsMessage('Mostrando %1 à %2 de %3 resultados')
+  minimalGridConfigProvider.setFirstLabel('Primeiro')
+  minimalGridConfigProvider.setLastLabel('Último')
+})
+```
+
 #### Nested objects
 
 It's suportted nested objects: uses [angular's parse](https://docs.angularjs.org/api/ng/service/$parse).
@@ -57,8 +77,8 @@ $scope.myColumns = [
   { key: 'age', title: 'Age' }
 ]
 $scope.myRows = [
-  { person: { user: { name: 'John ' } }, lastName: 'Doe', age: 1 },
-  { person: { user: { name: 'Marie ' } }, lastName: 'Doe', age: 1 }
+  { person: { user: { name: 'John ' } }, lastName: 'Doe', age: 30 },
+  { person: { user: { name: 'Marie ' } }, lastName: 'Doe', age: 28 }
 ]
 ```
 
@@ -79,30 +99,27 @@ $scope.myColumns = [
   }}
 ]
 $scope.myRows = [
-  { name: 'John ', lastName: 'Doe', age: 1 },
-  { name: 'Marie ', lastName: 'Doe', age: 1 }
+  { name: 'John ', lastName: 'Doe', age: 30 },
+  { name: 'Marie ', lastName: 'Doe', age: 28 }
 ]
 ```
-
-#### Getting the control
+### Getting the control
 
 Keep in mind: this implementation uses the power of callbacks to do anything by out of the grid directive.
 
 The isolated scope binding:
 
-```js
-{
-  columns: '<',
-  rows: '<',
-  fake: '<?',
-  totalRows: '<?',
-  paginationMax: '<?',
-  paginationRange: '<?',
-  changeOrderByCallback: '&?onChangeOrderBy',
-  changePaginateCallback: '&?onChangePaginate',
-  clickRowCallback: '&?onClickRow'
-}
-```
+|          property      |   type   | required |
+| ---------------------- | -------- | -------- |
+| columns                | array    | yes      |
+| rows                   | array    | yes      |
+| fake                   | bool     |          |
+| totalRows              | integer  |          |
+| pagination-max         | integer  |          |
+| pagination-range       | integer  |          |
+| on-change-order-by     | function |          |
+| on-change-paginate     | function |          |
+| on-click-row           | function |          |
 
 ##### on-click-row
 
@@ -112,6 +129,16 @@ If you want to do somenthing when the user clicks on a row just add a binding on
 <minimal-grid columns="myColumns" rows="myRows"
   on-click-row="myCallbackClick(row)"
   ></minimal-grid>
+```
+
+`row` will be something like this:
+
+```js
+{
+  name: "John", 
+  lastName: "Doe", 
+  age: 30
+}
 ```
 
 It's important to pass "row" as parameter: Uses [angular's parameter by reference](https://docs.angularjs.org/guide/directive).
@@ -126,6 +153,22 @@ If you want to do somenthing when the user clicks on a page number (previous or 
   ></minimal-grid>
 ```
 
+`pages` will be something like this:
+
+```js
+{
+  current: 2,
+  first: 1, 
+  last: 10, 
+  max: 10, 
+  next: 3, 
+  pagination: 1, 
+  previous: 1, 
+  range: 5, 
+  total: Array(10) 
+}
+```
+
 It's important to pass "pages" as parameter: Uses [angular's parameter by reference](https://docs.angularjs.org/guide/directive).
 
 ##### on-change-order-by
@@ -136,6 +179,15 @@ If you want to do somenthing when the user clicks on a header (to change the ord
 <minimal-grid columns="myColumns" rows="myRows"
   on-change-order-by="myCallbackOrderBy(orderby)"
   ></minimal-grid>
+```
+
+`orderby` will be something like this:
+
+```js
+{
+  orderdirection: "asc", 
+  orderby: "name"
+}
 ```
 
 It's important to pass "orderby" as parameter: Uses [angular's parameter by reference](https://docs.angularjs.org/guide/directive).
