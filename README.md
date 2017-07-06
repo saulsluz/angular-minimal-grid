@@ -34,7 +34,7 @@ Provided by [RawGit](https://rawgit.com/):
 
 ```html
 <link href="https://cdn.rawgit.com/saulsluz/angular-minimal-grid/c847e355/dist/minimal-grid.min.css" rel="stylesheet">
-<script src="https://rawgit.com/saulsluz/angular-minimal-grid/master/dist/minimal-grid.min.js"></script>
+<script src="https://cdn.rawgit.com/saulsluz/angular-minimal-grid/571019a4/js/minimal-grid.js"></script>
 ```
 
 #### Dependency injection
