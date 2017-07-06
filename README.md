@@ -6,6 +6,8 @@ Uses custom style of [dataTable](https://github.com/DataTables/DataTables).
 
 ### Installation
 
+#### Bower
+
 `$ bower install angular-minimal-grid`
 
 Embed it in your HTML:
@@ -14,6 +16,29 @@ Embed it in your HTML:
 <link href="./bower_components/angular-minimal-grid/dist/minimal-grid.min.css" rel="stylesheet">
 <script src="./bower_components/angular-minimal-grid/dist/minimal-grid.min.js"></script>
 ```
+
+#### npm
+
+`$ npm install angular-minimal-grid`
+
+Embed it in your HTML:
+
+```html
+<link href="./node_modules/angular-minimal-grid/dist/minimal-grid.min.css" rel="stylesheet">
+<script src="./node_modules/angular-minimal-grid/dist/minimal-grid.min.js"></script>
+```
+
+#### CDN
+
+Provided by [RawGit](https://rawgit.com/):
+
+```html
+<link href="https://cdn.rawgit.com/saulsluz/angular-minimal-grid/c847e355/dist/minimal-grid.min.css" rel="stylesheet">
+<script src="https://rawgit.com/saulsluz/angular-minimal-grid/master/dist/minimal-grid.min.js"></script>
+```
+
+#### Dependency injection
+
 Inject `angular-minimal-grid` module as a dependency into your app:
 
 ```js
