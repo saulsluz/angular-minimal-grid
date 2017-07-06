@@ -5,9 +5,9 @@
   ])
 
   app.config(function(minimalGridConfigProvider){
-    minimalGridConfigProvider.setStatsMessage('Mostrando %1 à %2 de %3 resultados')
-    minimalGridConfigProvider.setFirstLabel('Primeiro')
-    minimalGridConfigProvider.setLastLabel('Último')
+    //minimalGridConfigProvider.setStatsMessage('Mostrando %1 à %2 de %3 resultados')
+    //minimalGridConfigProvider.setFirstLabel('Primeiro')
+    //minimalGridConfigProvider.setLastLabel('Último')
   })
 
   app.controller('home', ['$scope','$timeout', function ($scope, $timeout) {
