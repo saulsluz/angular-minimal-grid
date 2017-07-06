@@ -15,6 +15,7 @@
   "keywords": [
     "data",
     "grid",
+    "angular",
     "bootstrap"
   ],
   "license": "MIT",
@@ -26,7 +27,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
     "bootstrap": "^3.x.x",
     "angular": "^1.x.x"
   }
