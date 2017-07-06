@@ -44,6 +44,8 @@ $scope.myRows = [
 ]
 ```
 
+![image](https://user-images.githubusercontent.com/2475044/27923800-08b6465e-6256-11e7-8319-c32bc53e0dd3.png)
+
 That's all.
 
 ### Customization
