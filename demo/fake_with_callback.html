@@ -22,35 +22,7 @@
 <body>
 
   <div ng-controller="home">
-    <h2>Minimal</h2>
-    <p class="clearfix">
-      <minimal-grid columns="minimalColumns" rows="minimalRows"></minimal-grid>
-    </p>
-
-    <h2>Custom</h2>
-    <p class="clearfix">
-      <minimal-grid columns="customColumns" rows="customRows"
-        pagination-max="2"
-        pagination-range="10"
-      ></minimal-grid>
-    </p>
-
-    <h2>Callback</h2>
-    <p class="clearfix">
-      <minimal-grid columns="callbackColumns" rows="callbackRows"
-        on-change-order-by="callbackChange(orderBy)"
-        on-change-paginate="callbackPaginate(pages)"
-        on-click-row="callbackClick(row)"></minimal-grid>
-    </p>
-
-    <h2>Fake</h2>
-    <p class="clearfix">
-      <minimal-grid columns="fakeColumns" rows="fakeRows"
-        fake="true"
-        total-rows="fakeTotal"
-      ></minimal-grid>
-    </p>
-
+      
     <h2>Fake with Callback</h2>
     <p class="clearfix">
       <minimal-grid columns="fCallColumns" rows="fCallRows"
@@ -61,16 +33,6 @@
         on-click-row="fCallClick(row)"
       ></minimal-grid>
 
-    <h2>Server side</h2>
-    <p class="clearfix">
-      <minimal-grid columns="serverColumns" rows="serverRows"
-        fake="true"
-        total-rows="serverTotal"
-        on-change-order-by="serverChange(orderBy)"
-        on-change-paginate="serverPaginate(pages)"
-        on-click-row="serverClick(row)"
-      ></minimal-grid>
-    </p>
   </div>
 
 </body>
