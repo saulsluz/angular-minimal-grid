@@ -92,23 +92,6 @@ app.config(function(minimalGridConfigProvider){
   minimalGridConfigProvider.setLastLabel('Último')
 })
 ```
-
-#### Nested objects
-
-It's suportted nested objects: uses [angular's parse](https://docs.angularjs.org/api/ng/service/$parse).
-
-```js
-$scope.myColumns = [
-  { key: 'person.user.name', title: 'Name' },
-  { key: 'lastName', title: 'Last Name' },
-  { key: 'age', title: 'Age' }
-]
-$scope.myRows = [
-  { person: { user: { name: 'John ' } }, lastName: 'Doe', age: 30 },
-  { person: { user: { name: 'Marie ' } }, lastName: 'Doe', age: 28 }
-]
-```
-
 #### Custom rendering
 
 It's suportted custom rendering of cell value: uses `onRender`
@@ -130,6 +113,23 @@ $scope.myRows = [
   { name: 'Marie ', lastName: 'Doe', age: 28 }
 ]
 ```
+
+#### Nested objects
+
+It's suportted nested objects: uses [angular's parse](https://docs.angularjs.org/api/ng/service/$parse).
+
+```js
+$scope.myColumns = [
+  { key: 'person.user.name', title: 'Name' },
+  { key: 'lastName', title: 'Last Name' },
+  { key: 'age', title: 'Age' }
+]
+$scope.myRows = [
+  { person: { user: { name: 'John ' } }, lastName: 'Doe', age: 30 },
+  { person: { user: { name: 'Marie ' } }, lastName: 'Doe', age: 28 }
+]
+```
+
 ### Getting the control
 
 Keep in mind: this implementation uses the power of callbacks to do anything by out of the grid directive.
