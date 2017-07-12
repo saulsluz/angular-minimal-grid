@@ -5,16 +5,19 @@
       this.statsMessage = 'Showing %1 to %2 of %3 results'
       this.setStatsMessage = function(message){
         this.statsMessage = message
+        return this
       }
 
       this.firstButtonLabel = 'First'
       this.setFirstLabel = function(label){
         this.firstButtonLabel = label
+        return this
       }
       
       this.lastButtonLabel = 'Last'
       this.setLastLabel = function(label){
         this.lastButtonLabel = label
+        return this
       }
       
       this.$get = function(){

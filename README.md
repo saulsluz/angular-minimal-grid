@@ -87,11 +87,13 @@ It's suportted custom labels by Provider methods:
 
 ```js
 app.config(function(minimalGridConfigProvider){
-  minimalGridConfigProvider.setStatsMessage('Mostrando %1 à %2 de %3 resultados')
-  minimalGridConfigProvider.setFirstLabel('Primeiro')
-  minimalGridConfigProvider.setLastLabel('Último')
+  minimalGridConfigProvider
+    .setStatsMessage('Mostrando %1 à %2 de %3 resultados')
+    .setFirstLabel('Primeiro')
+    .setLastLabel('Último')
 })
 ```
+
 #### Custom rendering
 
 It's suportted custom rendering of cell value: uses `onRender`
