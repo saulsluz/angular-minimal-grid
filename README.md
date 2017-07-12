@@ -116,6 +116,26 @@ $scope.myRows = [
 ]
 ```
 
+#### Max limit per page
+
+Set the max rows peer page. Default is `10`.
+
+```html
+<minimal-grid columns="myColumns" rows="myRows"
+  pagination-max="15"
+  ></minimal-grid>
+```
+
+##### Max limit of pagination
+
+Set the range of number's page to show. Default is `5`.
+
+```html
+<minimal-grid columns="myColumns" rows="myRows"
+  pagination-range="3"
+  ></minimal-grid>
+```
+
 #### Nested objects
 
 It's suportted nested objects: uses [angular's parse](https://docs.angularjs.org/api/ng/service/$parse).
@@ -241,28 +261,6 @@ Using this mode you will need to set the row's length by setting `totalRows`
 ```
 
 Combine with callbacks and feel the power.
-
-##### pagination-max
-
-Set the max rows peer page. Default is `10`.
-
-```html
-<minimal-grid columns="myColumns" rows="myRows"
-  fake="true"
-  pagination-max="15"
-  ></minimal-grid>
-```
-
-##### pagination-range
-
-Set the range of number's page to show. Default is `5`.
-
-```html
-<minimal-grid columns="myColumns" rows="myRows"
-  fake="true"
-  pagination-range="3"
-  ></minimal-grid>
-```
 
 ### License
 
