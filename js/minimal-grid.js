@@ -72,6 +72,9 @@
           scope.lastButtonLabel = minimalGridConfig.lastButtonLabel
 
           // model
+          if (!angular.isArray(scope.rows)){
+            throw new Error('minimalGrid error: rows must be an Array')
+          }
           scope.$watchCollection('rows', function (newRows) {
             setData(newRows)
 
@@ -143,7 +146,11 @@
               setData(data)
             }
 
-            if (scope.changeOrderByCallback) {
+            if (angular.isDefined(scope.changeOrderByCallback)) {
+              if (!angular.isFunction(scope.changeOrderByCallback)){
+                throw new Error('minimalGrid error: on-change-order-by must be a Function')
+              }
+
               scope.changeOrderByCallback({
                 orderBy: {
                   orderdirection: column.class.replace('sorting_', ''),
@@ -227,10 +234,20 @@
           scope.fake = scope.fake || false
 
           // column control
+          if (!angular.isArray(scope.columns)){
+            throw new Error('minimalGrid error: columns must be an Array')
+          }
           scope.columns.map(function (val) {
             val.class = 'sorting'
           })
 
+          if (angular.isDefined(scope.paginationMax) && !angular.isNumber(scope.paginationMax)){
+            throw new Error('minimalGrid error: pagination-max must be a Number')
+          }
+
+          if (angular.isDefined(scope.paginationRange) && !angular.isNumber(scope.paginationRange)){
+            throw new Error('minimalGrid error: pagination-range must be a Number')
+          }
           scope.pages = {
             first: 1,
             last: 1,
