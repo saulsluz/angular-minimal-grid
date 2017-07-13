@@ -84,7 +84,7 @@
       console.log('fCallClick', row)
     }
 
-    // fake with callback
+    // server side
     $scope.serverColumns = [
       { key: 'name', title: 'Name' },
       { key: 'lastName', title: 'Last Name' },
