@@ -387,7 +387,7 @@ describe('ngMinimalGrid', function () {
       ]
       $scope.rows = []
       $scope.fnOrderBy = function (orderBy) {
-
+        console.log('fnOrderBy')
       }
     })
 
@@ -471,6 +471,15 @@ describe('ngMinimalGrid', function () {
           rows="rows"
           on-change-order-by="fnOrderBy(orderBy)"
         ></minimal-grid>`)($scope);
+      
+      //gridScope = element.isolateScope()
+      //gridScope.$digest()
+      //console.log(element[0])
+//
+      //$scope.fnOrderBy()
+      //console.log(angular.mock.dump(gridScope))
+      //
+      //expect(1).toEqual(1)
       //expect(function () {
       //}).toThrowError('minimalGrid error: on-change-order-by must be a Function')
     });
