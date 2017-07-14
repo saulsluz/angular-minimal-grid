@@ -28,8 +28,6 @@
     
     .controller('minimalGridCtrl', ['$scope', '$parse', '$filter', 'minimalGridConfig',function($scope, $parse, $filter, minimalGridConfig){
       
-      console.log('$scope',$scope)
-
       $scope.firstButtonLabel = minimalGridConfig.firstButtonLabel
       $scope.lastButtonLabel = minimalGridConfig.lastButtonLabel
 
@@ -220,35 +218,35 @@
           clickRowCallback: '&?onClickRow'
         },
         controller:'minimalGridCtrl',
-        template: `
-        <div ng-bind="statsParse()"></div>
-          <table class="dataTable table table-striped table-bordered table-hover no-footer">
-            <thead>
-              <tr>
-                <th ng-click="changeOrderBy(column)" ng-repeat="column in columns" class="{{ column.class }} {{ column.hide }}">{{ column.title }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="odd" ng-repeat="dataRow in data | limitTo : pages.max">
-                <td ng-click="clickRow(dataRow)" ng-repeat="column in columns" class="{{ columns[$index].hide }}" ng-bind="columnParse(columns[$index].key, dataRow, columns[$index])"></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="pull-right">
-            <ul class="pagination">
-              <li><a href="#" ng-click="changePaginate(pages.first)">{{ firstButtonLabel }}</a></li>
-              <li>
-                <a href="#" ng-click="changePaginate(pages.previous)">
-                  << </a>
-              </li>
-              <li class="{{ ( n == pages.current ? \'active\' : \'\') }}"
-                ng-click="changePaginate(n)" ng-repeat="n in pages.total | limitTo : pages.range : pages.pagination"><a href="#">{{ n }}</a></li>
-              <li><a href="#" ng-click="changePaginate(pages.next)"> >> </a></li>
-              <li><a href="#" ng-click="changePaginate(pages.last)">{{ lastButtonLabel }}</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="clearfix"></div>`
+        template: 
+        '<div ng-bind="statsParse()"></div>' +
+        '  <table class="dataTable table table-striped table-bordered table-hover no-footer">' +
+        '    <thead>' +
+        '      <tr>' +
+        '        <th ng-click="changeOrderBy(column)" ng-repeat="column in columns" class="{{ column.class }} {{ column.hide }}">{{ column.title }}</th>' +
+        '      </tr>' +
+        '    </thead>' +
+        '    <tbody>' +
+        '      <tr class="odd" ng-repeat="dataRow in data | limitTo : pages.max">' +
+        '        <td ng-click="clickRow(dataRow)" ng-repeat="column in columns" class="{{ columns[$index].hide }}" ng-bind="columnParse(columns[$index].key, dataRow, columns[$index])"></td>' +
+        '      </tr>' +
+        '    </tbody>' +
+        '  </table>' +
+        '  <div class="pull-right">' +
+        '    <ul class="pagination">' +
+        '      <li><a href="#" ng-click="changePaginate(pages.first)">{{ firstButtonLabel }}</a></li>' +
+        '      <li>' +
+        '        <a href="#" ng-click="changePaginate(pages.previous)">' +
+        '          << </a>' +
+        '      </li>' +
+        '      <li class="{{ ( n == pages.current ? \'active\' : \'\') }}"' +
+        '        ng-click="changePaginate(n)" ng-repeat="n in pages.total | limitTo : pages.range : pages.pagination"><a href="#">{{ n }}</a></li>' +
+        '      <li><a href="#" ng-click="changePaginate(pages.next)"> >> </a></li>' +
+        '      <li><a href="#" ng-click="changePaginate(pages.last)">{{ lastButtonLabel }}</a></li>' +
+        '    </ul>' +
+        '  </div>' +
+        '</div>' +
+        '<div class="clearfix"></div>'
       }
     }])
 
