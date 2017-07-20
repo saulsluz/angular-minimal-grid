@@ -262,6 +262,16 @@ Using this mode you will need to set the row's length by setting `totalRows`
 
 Combine with callbacks and feel the power.
 
+### Tests
+
+To run the package's test, first install the dependencies, then run `npm test`:
+
+```bash
+$ npm install --only=dev
+$ bower install
+$ npm install
+```
+
 ### License
 
 MIT License
