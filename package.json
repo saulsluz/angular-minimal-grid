@@ -5,10 +5,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "bootstrap": "^3.x.x",
-    "angular": "^1.x.x"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saulsluz/angular-minimal-grid.git"
