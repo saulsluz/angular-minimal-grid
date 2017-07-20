@@ -21,6 +21,10 @@
     "url": "https://github.com/saulsluz/angular-minimal-grid/issues"
   },
   "homepage": "https://github.com/saulsluz/angular-minimal-grid#readme",
+  "dependencies": {
+    "bootstrap": "^3.x.x",
+    "angular": "^1.x.x"
+  },
   "devDependencies": {
     "jasmine": "^2.6.0",
     "karma": "^1.7.0",
