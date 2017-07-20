@@ -1,13 +1,9 @@
 {
   "name": "angular-minimal-grid",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "Implementation of data grid using twitter bootstrap for angular applications.",
   "scripts": {
     "test": "karma start --single-run"
-  },
-  "dependencies": {
-    "bootstrap": "^3.x.x",
-    "angular": "^1.x.x"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 # angular-minimal-grid
 
-Implementation of data grid using twitter bootstrap for angular applications.
+Implementation of data grid using twitter bootstrap (^3.x.x) for angular applications (^1.x.x).
 
 Uses custom style of [dataTable](https://github.com/DataTables/DataTables).
 
