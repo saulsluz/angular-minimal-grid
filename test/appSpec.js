@@ -472,32 +472,12 @@ describe('ngMinimalGrid', function () {
           on-change-order-by="fnOrderBy(orderBy)"
         ></minimal-grid>`)($scope);
       
-      //gridScope = element.isolateScope()
-      //gridScope.$digest()
-      //console.log(element[0])
-//
-      //$scope.fnOrderBy()
-      //console.log(angular.mock.dump(gridScope))
-      //
-      //expect(1).toEqual(1)
-      //expect(function () {
-      //}).toThrowError('minimalGrid error: on-change-order-by must be a Function')
+      $scope.$digest()
+      gridScope.$digest()
+      gridScope = element.isolateScope()
+      console.log(angular.mock.dump(gridScope))
+      console.log(angular.mock.dump(gridScope))
     });
-
-    //it('on-change-order-by assigned Array expected error "minimalGrid error: on-change-order-by must be a Function"', function () {
-    //  expect(function () {
-    //    element = $compile(`
-    //      <minimal-grid 
-    //        columns="columns"
-    //        rows="rows"
-    //        on-change-order-by="[function(){ }]"
-    //      ></minimal-grid>`)($scope);
-    //  }).toThrowError('minimalGrid error: on-change-order-by must be a Function')
-    //});
-
-    // onChangeOrderBy
-    // onChangePaginate
-    // onClickRow
 
   });
 
