@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "Implementation of data grid using twitter bootstrap for angular applications.",
   "scripts": {
-    "test": "karma start --single-run"
+    "test": "karma start karma.conf.js --single-run"
   },
   "repository": {
     "type": "git",
