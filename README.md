@@ -269,6 +269,11 @@ To run the package's test, first install the dependencies, then run `npm test`:
 ```bash
 $ npm install --only=dev
 $ bower install
+```
+
+or 
+
+```bash
 $ npm install
 ```
 
