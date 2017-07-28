@@ -8,10 +8,6 @@
     "js/minimal-grid.js",
     "css/minimal-grid.css"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/saulsluz/angular-minimal-grid.git"
-  },
   "keywords": [
     "data",
     "grid",
@@ -19,7 +15,7 @@
     "bootstrap"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/saulsluz/angular-minimal-grid",
   "ignore": [
     "**/.*",
     "node_modules",
