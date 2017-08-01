@@ -1,7 +1,7 @@
 {
   "name": "angular-minimal-grid",
   "version": "1.2.2",
-  "description": "Implementation of data grid using twitter bootstrap for angular applications.",
+  "description": "Implementation of data grid using twitter bootstrap for angularjs applications.",
   "scripts": {
     "test": "karma start --single-run"
   },

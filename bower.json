@@ -3,7 +3,7 @@
   "authors": [
     "Saul Luz <saulsluz@gmail.com>"
   ],
-  "description": "Minimal implementation of data grid using twitter bootstrap for angular applications exploring the callback power.",
+  "description": "Implementation of data grid using twitter bootstrap for angularjs applications.",
   "main": [
     "js/minimal-grid.js",
     "css/minimal-grid.css"
