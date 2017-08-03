@@ -1,6 +1,6 @@
 # angular-minimal-grid
 
-Implementation of data grid using twitter bootstrap (^3.x.x) for angular applications (^1.x.x).
+Implementation of data grid using bootstrap (^3.x.x) for angular applications (^1.x.x).
 
 Uses custom style of [dataTable](https://github.com/DataTables/DataTables).
 
@@ -13,28 +13,19 @@ Uses custom style of [dataTable](https://github.com/DataTables/DataTables).
 Embed it in your HTML:
 
 ```html
-<link href="./bower_components/angular-minimal-grid/dist/minimal-grid.min.css" rel="stylesheet">
-<script src="./bower_components/angular-minimal-grid/dist/minimal-grid.min.js"></script>
+<link href="./bower_components/angular-minimal-grid/css/minimal-grid.css" rel="stylesheet">
+<script src="./bower_components/angular-minimal-grid/js/minimal-grid.js"></script>
 ```
 
-#### npm
+#### NPM
 
 `$ npm install angular-minimal-grid`
 
 Embed it in your HTML:
 
 ```html
-<link href="./node_modules/angular-minimal-grid/dist/minimal-grid.min.css" rel="stylesheet">
-<script src="./node_modules/angular-minimal-grid/dist/minimal-grid.min.js"></script>
-```
-
-#### CDN
-
-Provided by [RawGit](https://rawgit.com/):
-
-```html
-<link href="https://cdn.rawgit.com/saulsluz/angular-minimal-grid/c847e355/dist/minimal-grid.min.css" rel="stylesheet">
-<script src="https://cdn.rawgit.com/saulsluz/angular-minimal-grid/c6239c5c/dist/minimal-grid.min.js"></script>
+<link href="./node_modules/angular-minimal-grid/css/minimal-grid.css" rel="stylesheet">
+<script src="./node_modules/angular-minimal-grid/js/minimal-grid.js"></script>
 ```
 
 #### Dependency injection
