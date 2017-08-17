@@ -94,12 +94,11 @@ $scope.myColumns = [
   { key: 'name', title: 'Name' },
   { key: 'lastName', title: 'Last Name' },
   { key: 'age', title: 'Age', onRender: function(val){
-      if (val < 18) {
-        return 'child'
-      } else {
-        return 'adult'
-      }
-  }}
+    if (val%2 == 0)
+      return '<b>'+val+'</b>' // support HTML
+    else
+      return val
+  } }
 ]
 $scope.myRows = [
   { name: 'John ', lastName: 'Doe', age: 30 },

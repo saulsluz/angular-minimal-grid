@@ -18,7 +18,12 @@
     $scope.minimalColumns = [
       { key: 'name', title: 'Name' },
       { key: 'lastName', title: 'Last Name' },
-      { key: 'age', title: 'Age' }
+      { key: 'age', title: 'Age', onRender: function(val){
+        if (val%2 == 0)
+          return '<b>'+val+'</b>'
+        else
+          return val
+      } }
     ]
     $scope.minimalRows = get100Rows()
 

@@ -26,7 +26,7 @@
       }
     })
     
-    .controller('minimalGridCtrl', ['$scope', '$parse', '$filter', 'minimalGridConfig',function($scope, $parse, $filter, minimalGridConfig){
+    .controller('minimalGridCtrl', ['$scope', '$parse', '$filter', 'minimalGridConfig', '$sce', function($scope, $parse, $filter, minimalGridConfig, $sce){
       
       $scope.firstButtonLabel = minimalGridConfig.firstButtonLabel
       $scope.lastButtonLabel = minimalGridConfig.lastButtonLabel
@@ -62,8 +62,11 @@
         if (columns.formatDate) {
           value = $filter('date')(value * 1000, columns.formatDate, '+0000')
         }
-        columns.onRender = columns.onRender || function (val) { return val }
-        return columns.onRender(value)
+        if (!!columns.onRender){
+          return $sce.trustAsHtml( columns.onRender(value).toString() )
+        }else{
+          return value
+        }
       }
 
       $scope.statsParse = function () {
@@ -244,7 +247,10 @@
         '    </thead>' +
         '    <tbody>' +
         '      <tr class="odd" ng-repeat="dataRow in data | limitTo : pages.max">' +
-        '        <td ng-click="clickRow(dataRow)" ng-repeat="column in columns" class="{{ columns[$index].hide }}" ng-bind="columnParse(columns[$index].key, dataRow, columns[$index])"></td>' +
+        '        <td ng-click="clickRow(dataRow)" ng-repeat="column in columns" class="{{ columns[$index].hide }}">' +
+        '          <span ng-if="!!columns[$index].onRender" ng-bind-html="columnParse(columns[$index].key, dataRow, columns[$index])"></span>' +
+        '          <span ng-if="!!!columns[$index].onRender" ng-bind="columnParse(columns[$index].key, dataRow, columns[$index])"></span>' +
+        '        </td>' +
         '      </tr>' +
         '    </tbody>' +
         '  </table>' +
