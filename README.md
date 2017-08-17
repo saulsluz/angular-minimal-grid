@@ -95,7 +95,7 @@ $scope.myColumns = [
   { key: 'lastName', title: 'Last Name' },
   { key: 'age', title: 'Age', onRender: function(val){
     if (val%2 == 0)
-      return '<b>'+val+'</b>' // support HTML
+      return '<b>'+val+'</b>' // HTML allowed
     else
       return val
   } }
