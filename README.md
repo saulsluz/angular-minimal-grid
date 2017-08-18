@@ -216,11 +216,11 @@ If you want to do somenthing when the user clicks on a header (to change the ord
 
 ```html
 <minimal-grid columns="myColumns" rows="myRows"
-  on-change-order-by="myCallbackOrderBy(orderby)"
+  on-change-order-by="myCallbackOrderBy(orderBy)"
   ></minimal-grid>
 ```
 
-`orderby` will be something like this:
+`orderBy` will be something like this:
 
 ```js
 {
