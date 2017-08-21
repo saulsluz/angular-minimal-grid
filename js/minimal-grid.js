@@ -116,7 +116,8 @@
         }
       }
 
-      $scope.changePaginate = function (page) {
+      $scope.changePaginate = function (page, event) {
+        if (event) event.preventDefault()
         $scope._lastPagePaginate = Number(page)
         $scope.pages.current = page
 
@@ -243,15 +244,12 @@
             </div>\
             <div class="pull-right">\
               <ul class="pagination">\
-                <li><a href="#" ng-click="changePaginate(pages.first)">{{ firstButtonLabel }}</a></li>\
-                <li>\
-                  <a href="#" ng-click="changePaginate(pages.previous)">\
-                    << </a>\
-                </li>\
+                <li><a href="#" ng-click="changePaginate(pages.first, $event)">{{ firstButtonLabel }}</a></li>\
+                <li><a href="#" ng-click="changePaginate(pages.previous, $event)"><< </a></li>\
                 <li class="{{ ( n == pages.current ? \'active\' : \'\') }}"\
-                  ng-click="changePaginate(n)" ng-repeat="n in pages.total | limitTo : pages.range : pages.pagination"><a href="#">{{ n }}</a></li>\
-                <li><a href="#" ng-click="changePaginate(pages.next)"> >> </a></li>\
-                <li><a href="#" ng-click="changePaginate(pages.last)">{{ lastButtonLabel }}</a></li>\
+                  ng-click="changePaginate(n, $event)" ng-repeat="n in pages.total | limitTo : pages.range : pages.pagination"><a href="#">{{ n }}</a></li>\
+                <li><a href="#" ng-click="changePaginate(pages.next, $event)"> >> </a></li>\
+                <li><a href="#" ng-click="changePaginate(pages.last, $event)">{{ lastButtonLabel }}</a></li>\
               </ul>\
             </div>\
             <div class="clearfix"></div>\
